@@ -11,8 +11,10 @@ for(var i=0; i<numRow; i++) {
 }
 var matrixResult = [];
 for(var i=0; i<numRow; i++) {
-        document.getElementById(`${"0"}${"7"}`).style.visibility = 'block';
-        document.getElementById(`${i}${"8"}`).style.display = "block";
+    var s=7;
+    document.getElementById(`${i}${s}`).innerText  = "";
+    //document.getElementById(`${i}${8}`).innerHTML  = "";
+    console.log(document.getElementById("b1").innerText);
     
 }
 function writeNum(numOrOp) {
@@ -20,7 +22,7 @@ function writeNum(numOrOp) {
         console.log(currentCol);
         matrix[currentRow][currentCol] = numOrOp;
         const button = document.getElementById(`${currentRow}${currentCol}`);
-        button.innerText = matrix[currentRow][currentCol]
+        button.innerText = matrix[currentRow][currentCol];
         currentCol++; 
 
     }    
@@ -76,6 +78,8 @@ function paintButton(row , col , color) {
 }
 function win() {
     alert("You are winning in row " + `${currentRow}`);
+    document.getElementById("keyboard").innerHTML = "";
+
 }
 function lose() {
     alert("Sorry but you are LOSER");
