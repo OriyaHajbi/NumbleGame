@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>MyNumble</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="myFuncs.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
+rel="stylesheet">
+    </head>
+    <body>
+        <center>
+            <h1>Numble Game</h1>
+            <h2>by Nadav Levi & Oriya Hajbi</h2>
+            <div>
+                <table >
+                <tr>
+                    <td><button id = "00" class = "firstLine"></button></td>
+                    <td><button id = "01" class = "firstLine"></button></td>
+                    <td><button id = "02" class = "firstLine"></button></td>
+                    <td><button id = "03" class = "firstLine"></button></td>
+                    <td><button id = "04" class = "firstLine"></button></td>
+                    <td><button id = "05" class = "firstLine"></button></td>
+                    <td><button id = "06" class = "firstLine"></button></td>
+                    <td id = "07" class="results">=</td>
+                    <td id = "08" class="results">4</td>
+
+                </tr>
+                <tr>
+                    <td><button id = "10" class = "secondLine"></button></td>
+                    <td><button id = "11" class = "secondLine"></button></td>
+                    <td><button id = "12" class = "secondLine"></button></td>
+                    <td><button id = "13" class = "secondLine"></button></td>
+                    <td><button id = "14" class = "secondLine"></button></td>
+                    <td><button id = "15" class = "secondLine"></button></td>
+                    <td><button id = "16" class = "secondLine"></button></td>
+                    <td id = "17" class="results">=</td>
+                    <td id = "18" class="results">4</td>
+
+                </tr>
+                <tr>
+                    <td><button id = "20" class = "thirdLine"></button></td>
+                    <td><button id = "21" class = "thirdLine"></button></td>
+                    <td><button id = "22" class = "thirdLine"></button></td>
+                    <td><button id = "23" class = "thirdLine"></button></td>
+                    <td><button id = "24" class = "thirdLine"></button></td>
+                    <td><button id = "25" class = "thirdLine"></button></td>
+                    <td><button id = "26" class = "thirdLine"></button></td>
+                    <td id = "27" class="results">=</td>
+                    <td id = "28" class="results">4</td> 
+                </tr>
+                <tr>
+                    <td><button id = "30" class = "fourthLine"></button></td>
+                    <td><button id = "31" class = "fourthLine"></button></td>
+                    <td><button id = "32" class = "fourthLine"></button></td>
+                    <td><button id = "33" class = "fourthLine"></button></td>
+                    <td><button id = "34" class = "fourthLine"></button></td>
+                    <td><button id = "35" class = "fourthLine"></button></td>
+                    <td><button id = "36" class = "fourthLine"></button></td>
+                    <td id = "37" class="results">=</td>
+                    <td id = "38" class="results">4</td>
+                </tr>
+                <tr>
+                    <td><button id = "40" class = "fifthLine"></button></td>
+                    <td><button id = "41" class = "fifthLine"></button></td>
+                    <td><button id = "42" class = "fifthLine"></button></td>
+                    <td><button id = "43" class = "fifthLine"></button></td>
+                    <td><button id = "44" class = "fifthLine"></button></td>
+                    <td><button id = "45" class = "fifthLine"></button></td>
+                    <td><button id = "46" class = "fifthLine"></button></td>
+                    <td id = "47" class="results">=</td>
+                    <td id = "48" class="results">4</td>
+                </tr>
+                <tr>
+                    <td><button id = "50" class = "sixthLine"></button></td>
+                    <td><button id = "51" class = "sixthLine"></button></td>
+                    <td><button id = "52" class = "sixthLine"></button></td>
+                    <td><button id = "53" class = "sixthLine"></button></td>
+                    <td><button id = "54" class = "sixthLine"></button></td>
+                    <td><button id = "55" class = "sixthLine"></button></td>
+                    <td><button id = "56" class = "sixthLine"></button></td>
+                    <td><p id = "57" class="results">=</p></td>
+                    <td id = "58" class="results">4</td>
+                </tr>
+            </table>
+            </div>
+            
+
+
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td><button class = "numOrOp" onclick="writeNum('1')">1</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('2')">2</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('3')">3</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('4')">4</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('5')">5</button></td> 
+                </tr>
+                 <tr>
+                    <td><button class = "numOrOp" onclick="writeNum('6')">6</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('7')">7</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('8')">8</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('9')">9</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('0')">0</button></td> 
+                </tr>
+                 <tr>
+                    <td><button class = "numOrOp" onclick="wSriteNum('+')">+</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('-')">-</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('*')">*</button></td>
+                    <td><button class = "numOrOp" onclick="writeNum('/')">/</button></td>
+                    <td><button class = "delete" ><i class='material-icons' onclick="deleteNum()">delete</i></button></td> 
+                </tr>
+                 <tr>
+                    <td colspan="5"><button class = "enter" onclick="checkLine()">ENTER</button></td> 
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+.firstLine,
+.secondLine,
+.thirdLine,
+.fourthLine,
+.fifthLine,
+.sixthLine {
+    width: 50px;
+    height: 50px;
+}
+
+.numOrOp,
+.delete {
+    
+    width: 40px;
+    height: 40px;
+}
+
+.enter {
+    width: 220px;
+    height: 40px;
+}
+
+.results {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+#green{
+    background-color: rgb(24, 247, 24);
+    width: 50px;
+    height: 50px;
+}
