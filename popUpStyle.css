@@ -1,0 +1,69 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+.popUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.popUp-active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.popUp-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.popUp-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.popUp-body{
+    text-align: left;
+    padding: 10px 15px;
+}
+.popUp-body .demo{
+    width: 50px;
+    height: 50px;
+}
+.popUp-body .demo-green{
+    width: 50px;
+    height: 50px;
+    background-color: greenyellow;
+}
+.popUp-body .demo-orange{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+}
+.popUp-body .demo-red{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.scoreResult{
+    text-align: center;
+    font-size: xx-large;
+}
+.statButton{
+    margin: 1px;
+    max-width: 430px;
+    width: 50px;
+    height: 50px;
+}
+.stat{
+    margin: 10px;
+}

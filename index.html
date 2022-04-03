@@ -2,14 +2,20 @@
     <head>
         <title>MyNumble</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="myFuncs.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
-rel="stylesheet">
+        <link rel="stylesheet" href="popUpStyle.css">
+        <script src="func.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
+        <body onload="startGame()">
         <center>
             <h1>Numble Game</h1>
             <h2>by Nadav Levi & Oriya Hajbi</h2>
+            <div >
+                <button data-popUp-target="#popUp" id="help" class="menu"><i class='material-icons' onclick="openPopUpHelp()">help</i></button>
+                <button id="score" class="menu" ><i class='material-icons' onclick="openPopUpScore()">emoji_events</i></button>
+                <button class="menu" ><i class='material-icons' onclick="changeMode()">dark_mode</i></button>
+            </div>
             <div>
                 <table >
                 <tr>
@@ -83,10 +89,9 @@ rel="stylesheet">
             </table>
             </div>
             
-
-
             <br>
             <br>
+
             <div id="keyboard">
                 <table>
                 <tr>
@@ -116,7 +121,128 @@ rel="stylesheet">
             </table>
 
             </div>
-            
+            <div id="win">
+                <button class="win">W</button>
+                <button class="win">I</button>
+                <button class="win">N</button>
+            </div>
+            <div id="lose">
+                <button class="lose">L</button>
+                <button class="lose">O</button>
+                <button class="lose">S</button>
+                <button class="lose">E</button>
+            </div>
+            <div class="popUp" id="helpPopUp">
+                <div class="popUp-header">
+                    <div class="title"><h1>How to Play Numble?</h1></div>
+                    <button data-close-target class="close-button" id="close" onclick="closePopupHelp()">&times;</button>
+                </div>
+                <div class="popUp-body">
+                    <p>You get 6 tries to guess the hidden equation!</p>
+                    <p>You get one hint, the value!</p>
+                    <p>All your guesses need to equate to the value to be accepted.</p>
+                    <table>
+                        <tr>
+                            <td><button id = "d0" class = "demo-green">4</button></td>
+                            <td><button id = "d1" class = "demo">+</button></td>
+                            <td><button id = "d2" class = "demo">3</button></td>
+                            <td><button id = "d3" class = "demo">-</button></td>
+                            <td><button id = "d4" class = "demo">1</button></td>
+                            <td><button id = "d5" class = "demo">*</button></td>
+                            <td><button id = "d6" class = "demo">3</button></td>
+                            <td id = "d7" class="results">=</td>
+                            <td id = "d8" class="results">4</td>
+                        </tr>
+                    </table>
+                    <p>The number 4 is in the correct place!</p>
+                    <table>
+                        <tr>
+                            <td><button id = "d0" class = "demo">3</button></td>
+                            <td><button id = "d1" class = "demo">*</button></td>
+                            <td><button id = "d2" class = "demo">2</button></td>
+                            <td><button id = "d3" class = "demo">/</button></td>
+                            <td><button id = "d4" class = "demo">1</button></td>
+                            <td><button id = "d5" class = "demo-orange">+</button></td>
+                            <td><button id = "d6" class = "demo">0</button></td>
+                            <td id = "d7" class="results">=</td>
+                            <td id = "d8" class="results">6</td>
+                        </tr>
+                    </table>
+                    <p>The addition sign "+" exists in the equation but in a different place.</p>
+                    <table>
+                        <tr>
+                            <td><button id = "d0" class = "demo-green">2</button></td>
+                            <td><button id = "d1" class = "demo-green">*</button></td>
+                            <td><button id = "d2" class = "demo-green">5</button></td>
+                            <td><button id = "d3" class = "demo-green">-</button></td>
+                            <td><button id = "d4" class = "demo-green">1</button></td>
+                            <td><button id = "d5" class = "demo-red">/</button></td>
+                            <td><button id = "d6" class = "demo-green">1</button></td>
+                            <td id = "d7" class="results">=</td>
+                            <td id = "d8" class="results">9</td>
+                        </tr>
+                    </table>
+                    <p>The division sign "/" does not exist in the equation.</p>
+                    <h1>Rules</h1>
+                    <ul>
+                        <li>The equation follows the DMAS order of operations.</li>
+                        <li>Leading 0s are not allowed e.g. 1 will be accepted but 01 won't be.</li>
+                    </ul>         
+                </div>
+            </div>
+            <div class="popUp" id="scorePopUp">
+                <div class="popUp-header">
+                    <button data-close-target class="close-button" id="close" onclick="closePopupScore()">&times;</button>
+                </div>
+                <div id="scoreStat" class="popUp-body">
+                    <center>
+
+                        <table>
+                            <tr>
+                                <td colspan="3"><h1>DAILY STATISTICS</h1></td>
+                            </tr>
+                            <tr>
+                                <td><p id="played" class="scoreResult">0</p></td>
+                                <td><p id="won" class="scoreResult">0</p></td>
+                                <td><p id="precentWon" class="scoreResult">NaN</p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="scoreResult">played</p></td>
+                                <td><p class="scoreResult">won</p></td>
+                                <td><p class="scoreResult">win %</p></td>
+                            </tr>
+                    </table>
+                    <hr>
+                    <p>Guess Distribution</p>
+                    </center>
+                    <table>
+                        <tr>
+                            <td><p class="stat">1</p></td>
+                            <td><button id="s1" class="statButton">0</button></td>
+                        </tr>
+                        <tr>
+                            <td><p class="stat">2</p></td>
+                            <td><button id="s2" class="statButton">0</button></td>
+                        </tr>
+                        <tr>
+                            <td><p class="stat">3</p></td>
+                            <td><button id="s3" class="statButton">0</button></td>
+                        </tr>
+                        <tr>
+                            <td><p class="stat">4</p></td>
+                            <td><button id="s4" class="statButton">0</button></td>
+                        </tr>
+                        <tr>
+                            <td><p class="stat">5</p></td>
+                            <td><button id="s5" class="statButton">0</button></td>
+                        </tr>
+                        <tr>
+                            <td><p class="stat">6</p></td>
+                            <td><button id="s6" class="statButton">0</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </center>
     </body>
 </html>
