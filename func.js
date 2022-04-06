@@ -165,21 +165,43 @@ function lose() {
 function changeMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
-    var classResults = document.getElementsByClassName("results");
+    var body = document.getElementById("helpPopUp");
     isDarkMode = !isDarkMode;
     if (!isDarkMode){
+        body.style.backgroundColor = "black";
+        setPopUpHelpTextWhite();
         for (let index = 0; index < numRow; index++) {
             document.getElementById(`${index}${7}`).classList.toggle("dark-mode");
             document.getElementById(`${index}${8}`).classList.toggle("dark-mode");
         }
     }else{
+        body.style.backgroundColor = "white";
+        setPopUpHelpTextBlack();
         for (let index = 0; index < numRow; index++) {
             document.getElementById(`${index}${7}`).classList.remove("dark-mode");
             document.getElementById(`${index}${8}`).classList.remove("dark-mode");
         }
+        
     }
 
 
+}
+function setPopUpHelpTextBlack(){
+    for (let index = 0; index < 6; index++) {
+        document.getElementById(`help${index}`).style.color = "black";
+    }
+
+}
+function setPopUpHelpTextWhite(){
+    for (let index = 0; index < 6; index++) {
+        document.getElementById(`help${index}`).style.color = "white";
+    }
+}
+function setPopUpScoreTextBlack(){
+
+}
+function setPopUpScoreTextWhite(){
+    
 }
 function openPopUpHelp() {
     popup = document.getElementById("helpPopUp");
